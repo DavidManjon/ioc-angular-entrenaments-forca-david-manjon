@@ -1,3 +1,4 @@
+
 <main class="container">
   <section class="content">
     <h1>{{ appName }}</h1>
@@ -9,10 +10,10 @@
     <div class="project-card">
       <h2>Dades del projecte</h2>
       <ul>
-        <li><strong>Aplicacio:</strong>{{ appName }}</li>
-        <li><strong>Framework:</strong>Angular</li>
-        <li><strong>Estils:</strong>SCSS</li>
-        <li><strong>Projecte:</strong>IOC</li>
+        <li><strong>Aplicacio:</strong> {{ appName }}</li>
+        <li><strong>Framework:</strong> Angular</li>
+        <li><strong>Estils:</strong> SCSS</li>
+        <li><strong>Projecte:</strong> IOC</li>
       </ul>
     </div>
 
@@ -20,8 +21,28 @@
       Aplicacio creada per David Manjon.
     </aside>
 
-    <p>Projecte base llest</p>
+    <hr />
+
+    <h2>Llistat d'exercicis</h2>
+
+    <app-exercici-filters
+      (filtreCanviat)="aplicarFiltre($event)"
+    />
+
+    <app-exercici-list
+      [exercicis]="exercicisFiltrats"
+      (exerciciSeleccionat)="seleccionarExercici($event)"
+    />
+
+    @if (exerciciSeleccionat) {
+      <div class="project-card">
+        <h3>Exercici seleccionat</h3>
+        <p>{{ exerciciSeleccionat.nom }}</p>
+        <p>{{ exerciciSeleccionat.descripcio }}</p>
+      </div>
+    }
 
   </section>
 </main>
+
 <router-outlet />

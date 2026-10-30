@@ -1,0 +1,20 @@
+<article class="exercici-card">
+  <h3>{{ exercici.nom }}</h3>
+
+  <app-categoria-badge
+    [categoria]="exercici.categoria"
+  />
+
+  <p>{{ exercici.descripcio }}</p>
+
+  <p><strong>Data:</strong> {{ exercici.data }}</p>
+  <p><strong>Sèries:</strong> {{ exercici.series }}</p>
+
+  @if (exercici.destacat) {
+    <p>Exercici destacat</p>
+  }
+
+  <button type="button" (click)="seleccionar()">
+    Seleccionar exercici
+  </button>
+</article>

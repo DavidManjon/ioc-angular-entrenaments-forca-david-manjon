@@ -1,0 +1,32 @@
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  background: #f1f5f9;
+  padding: 18px;
+  border-radius: 10px;
+  margin: 20px 0;
+
+  label {
+    color: #1e293b;
+    font-weight: 600;
+  }
+
+  select {
+    min-width: 180px;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    color: #334155;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid #93c5fd;
+      border-color: #2563eb;
+    }
+  }
+}

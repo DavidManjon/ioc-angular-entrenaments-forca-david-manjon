@@ -1,0 +1,13 @@
+<div class="filters">
+  <label for="categoria">Filtrar per categoria:</label>
+
+  <select
+    id="categoria"
+    #categoriaselect
+    (change)="seleccionarCategoria(categoriaselect.value)"
+  >
+    @for (categoria of categories; track categoria) {
+      <option [value]="categoria">{{ categoria }}</option>
+    }
+  </select>
+</div>

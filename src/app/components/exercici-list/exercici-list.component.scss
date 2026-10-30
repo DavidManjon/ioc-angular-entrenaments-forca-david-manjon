@@ -1,0 +1,12 @@
+.exercici-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+@media (max-width: 700px) {
+  .exercici-list {
+    grid-template-columns: 1fr;
+  }
+}
