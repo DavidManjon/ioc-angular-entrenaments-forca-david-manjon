@@ -24,16 +24,19 @@ export class App {
   public exercicisFiltrats: Exercici[] = [...this.exercicis];
   public exerciciSeleccionat: Exercici | null = null;
 
-  public aplicarFiltre(categoria: string): void {
-    if (categoria === 'Totes') {
-      this.exercicisFiltrats = [...this.exercicis];
-      return;
-    }
+  public aplicarFiltres(filtres: { text: string; categoria: string }): void {
+  this.exercicisFiltrats = this.exercicis.filter(exercici => {
+    const coincideixText = exercici.nom
+      .toLowerCase()
+      .includes(filtres.text.trim().toLowerCase());
 
-    this.exercicisFiltrats = this.exercicis.filter(
-      exercici => exercici.categoria === categoria
-    );
-  }
+    const coincideixCategoria =
+      filtres.categoria === 'Totes' ||
+      exercici.categoria === filtres.categoria;
+
+    return coincideixText && coincideixCategoria;
+  });
+}
 
   public seleccionarExercici(exercici: Exercici): void {
     this.exerciciSeleccionat = exercici;
