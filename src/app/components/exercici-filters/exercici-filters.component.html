@@ -12,10 +12,11 @@
       minlength="3"
       #camptext="ngModel"
       placeholder="Escriu almenys 3 caràcters"
+      aria-describedby="errorCerca"
     >
 
     @if (camptext.invalid && (camptext.dirty || camptext.touched)) {
-      <small class="error">
+      <small id="errorCerca" class="error">
         @if (camptext.errors?.['required']) {
           El camp de cerca és obligatori.
         } @else if (camptext.errors?.['minlength']) {

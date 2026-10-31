@@ -37,5 +37,10 @@
     &:hover {
       background: #1d4ed8;
     }
+
+    &:focus-visible {
+      outline: 3px solid #f59e0b;
+      outline-offset: 3px;
+    }
   }
 }

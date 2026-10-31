@@ -1,4 +1,7 @@
-<main class="container">
+<a class="skip-link" href="#contingut-principal">
+  Salta al contingut principal
+</a>
+<main class="container" id="contingut-principal">
   <section class="content">
     <h1>{{ appName }}</h1>
 
@@ -28,7 +31,7 @@
       (filtreCanviat)="aplicarFiltres($event)"
     />
 
-    <p>
+    <p role="status" aria-live="polite">
       Resultats trobats: {{ exercicisFiltrats.length }}
     </p>
 
