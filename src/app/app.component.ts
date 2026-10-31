@@ -1,4 +1,4 @@
-
+import { DatePipe } from '@angular/common';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Exercici } from './models/exercici.model';
@@ -11,7 +11,8 @@ import { ExerciciFilters } from './components/exercici-filters/exercici-filters.
   imports: [
     RouterOutlet,
     ExerciciList,
-    ExerciciFilters
+    ExerciciFilters,
+    DatePipe
   ],
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,

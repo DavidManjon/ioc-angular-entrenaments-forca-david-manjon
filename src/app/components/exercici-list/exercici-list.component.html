@@ -1,6 +1,6 @@
 <div class="exercici-list">
   @if (exercicis.length === 0) {
-    <p>No hi ha exercicis disponibles.</p>
+    <p>No s'han trobat exercicis.</p>
   } @else {
     @for (exercici of exercicis; track exercici.id) {
       <app-exercici-card
