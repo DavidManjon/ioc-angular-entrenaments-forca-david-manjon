@@ -4,6 +4,7 @@ export interface Exercici {
   descripcio: string;
   categoria: string;
   data: string;
+  nivell: string;
   series: number;
   destacat?: boolean;
 }

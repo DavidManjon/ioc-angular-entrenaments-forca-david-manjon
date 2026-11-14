@@ -1,3 +1,4 @@
+
 <a class="skip-link" href="#contingut-principal">
   Salta al contingut principal
 </a>
@@ -31,9 +32,104 @@
       (filtreCanviat)="aplicarFiltres($event)"
     />
 
+    <h2>Afegir un exercici</h2>
+
+    <form (ngSubmit)="crearExercici()">
+    <div>
+      <label for="nom">Nom de l'exercici</label>
+      <input
+        id="nom"
+        type="text"
+        name="nom"
+        [(ngModel)]="nouExercici.nom"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="descripcio">Descripció</label>
+      <textarea
+        id="descripcio"
+        name="descripcio"
+        [(ngModel)]="nouExercici.descripcio"
+        required
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="categoria">Categoria</label>
+      <input
+        id="categoria"
+        type="text"
+        name="categoria"
+        [(ngModel)]="nouExercici.categoria"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="data">Data</label>
+      <input
+        id="data"
+        type="date"
+        name="data"
+        [(ngModel)]="nouExercici.data"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="series">Sèries</label>
+      <input
+        id="series"
+        type="number"
+        name="series"
+        min="1"
+        [(ngModel)]="nouExercici.series"
+        required
+      />
+    </div>
+
+    <div>
+      <label>
+        <input
+          type="checkbox"
+          name="destacat"
+          [(ngModel)]="nouExercici.destacat"
+        />
+        Exercici destacat
+      </label>
+    </div>
+
+    <button type="submit">Crear exercici</button>
+  </form>
+
+  @if (missatgeCreacio) {
     <p role="status" aria-live="polite">
-      Resultats trobats: {{ exercicisFiltrats.length }}
+      {{ missatgeCreacio }}
     </p>
+  }
+
+    @if (carregant) {
+      <p role="status" aria-live="polite">
+        Carregant exercicis...
+      </p>
+    }
+
+    @if (error) {
+      <div role="alert">
+        <p>{{ error }}</p>
+        <button type="button" (click)="reintentar()">
+          Tornar a intentar
+        </button>
+      </div>
+    }
+
+    @if (!carregant && !error) {
+      <p role="status" aria-live="polite">
+        Resultats trobats: {{ exercicisFiltrats.length }}
+      </p>
+    }
 
     <app-exercici-list
       [exercicis]="exercicisFiltrats"

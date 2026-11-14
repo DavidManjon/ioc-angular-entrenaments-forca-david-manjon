@@ -1,0 +1,96 @@
+{
+  "exercicis": [
+    {
+      "id": "1",
+      "nom": "Sentadilla",
+      "descripcio": "Exercici de força per treballar els quàdriceps i els glutis.",
+      "categoria": "Cames",
+      "data": "2026-11-14",
+      "series": 4,
+      "destacat": true
+    },
+    {
+      "id": "2",
+      "nom": "Press de banca",
+      "descripcio": "Exercici per desenvolupar la força dels músculs pectorals.",
+      "categoria": "Pit",
+      "data": "2026-11-14",
+      "series": 3,
+      "destacat": true
+    },
+    {
+      "id": "3",
+      "nom": "Pes mort",
+      "descripcio": "Exercici compost per treballar l'esquena i les cames.",
+      "categoria": "Esquena i cames",
+      "data": "2026-11-14",
+      "series": 4
+    },
+    {
+      "id": "4",
+      "nom": "Press militar",
+      "descripcio": "Exercici de força per desenvolupar les espatlles.",
+      "categoria": "Espatlles",
+      "data": "2026-11-14",
+      "series": 3
+    },
+    {
+      "id": "5",
+      "nom": "Curl de bíceps",
+      "descripcio": "Exercici d'aïllament per treballar els bíceps.",
+      "categoria": "Braços",
+      "data": "2026-11-14",
+      "series": 3
+    },
+    {
+      "id": "6",
+      "nom": "Extensió de tríceps",
+      "descripcio": "Exercici per enfortir els músculs tríceps.",
+      "categoria": "Braços",
+      "data": "2026-11-14",
+      "series": 3
+    },
+    {
+      "id": "7",
+      "nom": "Rem amb barra",
+      "descripcio": "Exercici per treballar la musculatura de l'esquena.",
+      "categoria": "Esquena",
+      "data": "2026-11-14",
+      "series": 4
+    },
+    {
+      "id": "8",
+      "nom": "Elevacions laterals",
+      "descripcio": "Exercici per desenvolupar la part lateral de les espatlles.",
+      "categoria": "Espatlles",
+      "data": "2026-11-14",
+      "series": 3
+    },
+    {
+      "id": "9",
+      "nom": "Premsa de cames",
+      "descripcio": "Exercici de màquina per treballar els músculs de les cames.",
+      "categoria": "Cames",
+      "data": "2026-11-14",
+      "series": 4
+    },
+    {
+      "id": "10",
+      "nom": "Planxa abdominal",
+      "descripcio": "Exercici isomètric per enfortir la zona abdominal.",
+      "categoria": "Abdominals",
+      "data": "2026-11-14",
+      "series": 3
+    },
+    {
+      "nom": "curl bicep",
+      "descripcio": "curl bicep manelles",
+      "categoria": "Força",
+      "data": "2026-11-14",
+      "series": 3,
+      "destacat": true,
+      "id": "U8vDROWXrhk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

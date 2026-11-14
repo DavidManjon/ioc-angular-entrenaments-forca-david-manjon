@@ -1,4 +1,3 @@
-
 import { Exercici } from './exercici.model';
 
 export const EXERCICIS_MOCK: Exercici[] = [
@@ -7,6 +6,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Sentadilla',
     descripcio: 'Exercici per treballar principalment les cames i els glutis.',
     categoria: 'Cames',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 4,
     destacat: true
@@ -16,6 +16,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Press de banca',
     descripcio: 'Exercici de força per treballar els pectorals.',
     categoria: 'Pit',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 3,
     destacat: true
@@ -25,6 +26,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Pes mort',
     descripcio: 'Exercici compost per treballar la cadena posterior.',
     categoria: 'Esquena i cames',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 4,
     destacat: true
@@ -34,6 +36,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Press militar',
     descripcio: 'Exercici per desenvolupar la força de les espatlles.',
     categoria: 'Espatlles',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 3,
     destacat: false
@@ -43,6 +46,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Curl de bíceps',
     descripcio: 'Exercici d\'aïllament per treballar els bíceps.',
     categoria: 'Braços',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 3,
     destacat: false
@@ -52,6 +56,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Extensió de tríceps',
     descripcio: 'Exercici per enfortir la musculatura del tríceps.',
     categoria: 'Braços',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 3,
     destacat: false
@@ -61,6 +66,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Rem amb barra',
     descripcio: 'Exercici per treballar la musculatura de l\'esquena.',
     categoria: 'Esquena',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 4,
     destacat: true
@@ -70,6 +76,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Elevacions laterals',
     descripcio: 'Exercici per desenvolupar els deltoides laterals.',
     categoria: 'Espatlles',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 3,
     destacat: false
@@ -79,6 +86,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Premsa de cames',
     descripcio: 'Exercici de força per treballar quàdriceps i glutis.',
     categoria: 'Cames',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 4,
     destacat: false
@@ -88,6 +96,7 @@ export const EXERCICIS_MOCK: Exercici[] = [
     nom: 'Planxa abdominal',
     descripcio: 'Exercici isomètric per enfortir el tronc.',
     categoria: 'Abdominals',
+    nivell: 'Principiant',
     data: '2026-10-25',
     series: 3,
     destacat: false
