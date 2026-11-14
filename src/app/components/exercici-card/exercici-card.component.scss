@@ -44,3 +44,17 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .exercici-card {
+    padding: 14px;
+
+    h3 {
+      font-size: 18px;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}

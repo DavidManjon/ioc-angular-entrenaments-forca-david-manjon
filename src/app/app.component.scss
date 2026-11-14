@@ -78,3 +78,45 @@ hr {
     padding: 16px;
   }
 }
+
+form {
+  display: grid;
+  gap: 14px;
+
+  > div {
+    display: grid;
+    gap: 6px;
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font: inherit;
+  }
+
+  button {
+    width: fit-content;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 7px;
+    background: #1e3a8a;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 700px) {
+  form button {
+    width: 100%;
+  }
+}
