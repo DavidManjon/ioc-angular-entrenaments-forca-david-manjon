@@ -1,41 +1,39 @@
-<form #formulari="ngForm" class="filters" (ngSubmit)="aplicarFiltres()">
+<form [formGroup]="formulari" class="filters" (ngSubmit)="aplicarFiltres()">
 
   <div class="form-field">
     <label for="textCerca">Cerca d'exercicis:</label>
 
-    <input
-      id="textCerca"
-      name="textCerca"
-      type="text"
-      [(ngModel)]="textCerca"
-      required
-      minlength="3"
-      #camptext="ngModel"
-      placeholder="Escriu almenys 3 caràcters"
-      aria-describedby="errorCerca"
-    >
+    <input id="textCerca" type="text" formControlName="textCerca" placeholder="Escriu almenys 3 caràcters"
+      aria-describedby="errorCerca">
 
-    @if (camptext.invalid && (camptext.dirty || camptext.touched)) {
-      <small id="errorCerca" class="error">
-        @if (camptext.errors?.['required']) {
-          El camp de cerca és obligatori.
-        } @else if (camptext.errors?.['minlength']) {
-          El text ha de tenir com a mínim 3 caràcters.
-        }
-      </small>
+    @if (formulari.controls.textCerca.invalid &&
+    (formulari.controls.textCerca.dirty || formulari.controls.textCerca.touched)) {
+    <small id="errorCerca" class="error" role="alert">
+      @if (formulari.controls.textCerca.errors?.['required']) {
+      El camp de cerca és obligatori.
+      } @else if (formulari.controls.textCerca.errors?.['minlength']) {
+      El text ha de tenir com a mínim 3 caràcters.
+      } @else if (formulari.controls.textCerca.errors?.['senseResultats']) {
+      No s'han trobat exercicis amb aquest terme.
+      } @else if (formulari.controls.textCerca.errors?.['errorConsulta']) {
+      No s'ha pogut comprovar la cerca. Torna-ho a intentar.
+      }
+    </small>
+    }
+
+    @if (formulari.controls.textCerca.pending) {
+    <small role="status" aria-live="polite">
+      Comprovant si hi ha resultats...
+    </small>
     }
   </div>
 
   <div class="form-field">
     <label for="categoria">Categoria:</label>
 
-    <select
-      id="categoria"
-      name="categoria"
-      [(ngModel)]="categoriaSeleccionada"
-    >
+    <select id="categoria" formControlName="categoriaSeleccionada">
       @for (categoria of categories; track categoria) {
-        <option [value]="categoria">{{ categoria }}</option>
+      <option [value]="categoria">{{ categoria }}</option>
       }
     </select>
   </div>
@@ -51,3 +49,23 @@
   </div>
 
 </form>
+
+@if (historial.length > 0) {
+<section class="search-history" aria-labelledby="titolHistorial">
+  <h3 id="titolHistorial">Historial de cerques</h3>
+
+  <ul>
+    @for (cerca of historial; track $index) {
+    <li>
+      <span>
+        {{ cerca.text }} — {{ cerca.categoria }}
+      </span>
+
+      <button type="button" (click)="recuperarCerca(cerca)">
+        Recuperar cerca
+      </button>
+    </li>
+    }
+  </ul>
+</section>
+}

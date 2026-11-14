@@ -86,6 +86,20 @@ export class ExercicisService {
     );
   }
 
+  public comprovarTerme(terme: string): Observable<boolean> {
+    const termeNormalitzat = terme.trim().toLowerCase();
+
+    return this.http.get<ExerciciApi[]>(this.apiUrl).pipe(
+      map(adaptarExercicis),
+      map(exercicis =>
+        exercicis.some(exercici =>
+          exercici.nom.toLowerCase().includes(termeNormalitzat) ||
+          exercici.descripcio.toLowerCase().includes(termeNormalitzat)
+        )
+      )
+    );
+  }
+
   public reintentarUltimaConsulta(): void {
     this.recarregaSubject.next();
   }
